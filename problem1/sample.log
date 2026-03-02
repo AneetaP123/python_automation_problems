@@ -1,0 +1,53 @@
+UVM_INFO @ 0: reporter [RNTST] Running test i3c_master_random_test...
+UVM_INFO @ 0: uvm_root [UVMTOP] UVM testbench topology:
+----------------------------------------------
+Name                        Type
+----------------------------------------------
+uvm_test_top                i3c_master_random_test
+  env                       i3c_env
+    agent                   i3c_agent
+      sequencer             uvm_sequencer
+      driver                i3c_driver
+      monitor               i3c_monitor
+    scoreboard              i3c_scoreboard
+----------------------------------------------
+
+UVM_INFO @ 0: uvm_test_top.env.agent.sequencer [SEQ] Starting random sequence
+UVM_INFO @ 100ns: uvm_test_top.env.agent.driver [DRV] Driving transaction id=0 addr=0x52 data=0xA5
+UVM_INFO @ 150ns: uvm_test_top.env.agent.monitor [MON] Observed transaction id=0
+UVM_INFO @ 200ns: uvm_test_top.env.scoreboard [SCB] Transaction matched successfully
+
+UVM_INFO @ 250ns: uvm_test_top.env.agent.driver [DRV] Driving transaction id=1 addr=0x34 data=0x9C
+UVM_INFO @ 310ns: uvm_test_top.env.agent.monitor [MON] Observed transaction id=1
+UVM_WARNING @ 320ns: uvm_test_top.env.scoreboard [SCB] Minor timing skew detected
+
+UVM_INFO @ 500ns: uvm_test_top.env.agent.driver [DRV] Driving transaction id=2 addr=0x77 data=0x3F
+UVM_ERROR @ 620ns: uvm_test_top.env.scoreboard [SCB] DATA_MISMATCH: Expected=0x3F Actual=0x1F
+
+UVM_INFO @ 700ns: uvm_test_top.env.agent.driver [DRV] Driving transaction id=3 addr=0x21 data=0xBC
+UVM_INFO @ 780ns: uvm_test_top.env.agent.monitor [MON] Observed transaction id=3
+UVM_INFO @ 800ns: uvm_test_top.env.scoreboard [SCB] Transaction matched successfully
+
+UVM_INFO @ 1000ns: uvm_test_top.env.agent.driver [DRV] Driving transaction id=4 addr=0x60 data=0x88
+UVM_FATAL @ 1500ns: uvm_test_top.env.agent.driver [DRV] TIMEOUT waiting for ACK signal
+
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO     : 15
+UVM_WARNING  : 1
+UVM_ERROR    : 1
+UVM_FATAL    : 1
+
+** Report counts by id
+[SEQ] 1
+[DRV] 6
+[MON] 4
+[SCB] 5
+
+Simulation time: 1500 ns
+CPU time: 2.34 seconds
+Seed: 987654
+
+UVM_FATAL: Simulation aborted due to fatal error.
+UVM_INFO @ 1500ns: reporter [TEST_DONE] Test i3c_master_random_test FAILED
