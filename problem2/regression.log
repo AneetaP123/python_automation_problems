@@ -17,6 +17,7 @@ Running Test: test_reset_warm_boot
 Seed: 98765
 Status: FAIL
 Error: UVM_ERROR @ 12045ns: reset timeout detected
+Error: UVM_ERROR @ 12045ns: reset timeout detected
 Simulation Time: 15000 ns
 -----------------------------------------------------
 
