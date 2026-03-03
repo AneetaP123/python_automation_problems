@@ -1,7 +1,7 @@
 
 def problem2():
     with open("regression.log","r") as f1, open("summary.log","w") as f2:
-        f2.write(f"Testname\t\tStatus\tErrors")
+        f2.write(f"Testname\t\tStatus\tErrors\n------------------------------------------")
         for line in f1:
             count_error = 0
             if "Running" in line:
